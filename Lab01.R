@@ -1,4 +1,6 @@
 # a "loaded" die that has a 10% chance of getting a 1-5 and a 50% chance of getting a 6.
+# Lei Zhao
+
 rm(list=ls())
 
 # 1 What is the mean and variance for the loaded dice?
