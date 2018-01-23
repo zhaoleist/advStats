@@ -9,7 +9,6 @@ myVar <- sum((loaded[1:5] - myMean)^2) * 1/10 + 1/2 *(6 - myMean)^2
 " mean: 4.5, variance: 3.25"
 
 # 2 Make a function in R that "rolls" this dice; return a vector containing the rolls. 
-iter <- 10000
 myRolls <- function(times){
   outcomes <- vector(length=times, mode="double")
   for (i in 1: times){
@@ -17,11 +16,14 @@ myRolls <- function(times){
   }
   return(outcomes)
 }
+iter <- 10000
 myRolls(iter)
 
 # 3 Make a histogram of some large number of rolls.  
 # Do the rolls of the loaded die approximate a uniform distribution?
 hist(myRolls(iter), breaks=0:6)
+barplot(table(myRolls(iter)), xlab="roll", ylab="frequency")
+# Since the rolls are discrete, it's more appropriate to use barplot()
 # ANSWER:
 " The rolls of the loaded die does not approximate a uniform distribution. We see more of a 6"
 
@@ -46,7 +48,7 @@ text(log10(trialSizes), vars, label=myLabels, pos=1, cex=0.5, col="red")
 lines(log10(trialSizes),rep(myVar,length(trialSizes)))
 # ANSWER:
 " After a few attemps, it seems that both means vs. trial size plot and 
- variance vs. trial size plot started getting convergence on the expected value
+ variance vs. trial size plot started getting convergence on the expected values
  from the 15th value of the trialSize vector, which is 2000." 
 
 ####################################################################################
