@@ -57,6 +57,6 @@ histo(pValues_3)    # with p = 0.49
   
   If the expected value changed to 0.49 or 0.51, I don't expect to see the same shape of the
   p-value histogram because the actual distribution is no longer symmatric around the distribution 
-  with the expected value of 0.49 or 0.51. By histogram, we can verify that we see more of 
-  small p-values."
+  with the expected value of 0.49 or 0.51. The sample size is 10000, so 1% can cause big differences.
+  By histogram, we can verify that we see more of small p-values."
 
