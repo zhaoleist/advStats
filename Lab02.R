@@ -51,12 +51,12 @@ for (q in 1:length(myVals)){
 }
 histo(pValues_3)    # with p = 0.49
 # ANSWER
-" Changing the expect value from 1/2 to 2/3, all the p.values become very small. Interestingly,
-  if we change 1/2 to a much bigger values, like 3/4, we end up with the same extremely small 
+" Changing the expected value from 1/2 to 2/3, all the p-values become very small. Interestingly,
+  if we change 1/2 to a much bigger value, like 3/4, we end up with the same extremely small 
   p-values in R.
   
   If the expected value changed to 0.49 or 0.51, I don't expect to see the same shape of the
   p-value histogram because the actual distribution is no longer symmatric around the distribution 
   with the expected value of 0.49 or 0.51. By histogram, we can verify that we see more of 
-  small p-values.
+  small p-values."
 
