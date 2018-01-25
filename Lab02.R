@@ -8,7 +8,7 @@ plot(0:sampleSize, dbinom(0:sampleSize, sampleSize, probMut), xlab=" observed nu
 myMean <- sampleSize * probMut    
 myVars <- sampleSize * probMut * (1 - probMut)    
 #ANSWER:
-" The probility of seeing exatly 12 people with the mutation is 0.01101246.
+" The probability of seeing exatly 12 people with the mutation is 0.01101246.
   Mean for the expected number of people with the mutation is 10.
   Variance for the expected number of people with the mutation is 6.666667. "
 
