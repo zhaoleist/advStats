@@ -13,7 +13,7 @@ for (i in 1:length(data)){
   probPrior[2] <- 1 - probPrior[1]
 }
 plot(1:length(data),container, 
-     xlab="number of rolls", ylab="probability of picking us a loaded die", pch=19)
+     xlab="number of rolls", ylab="posterior probability that we have picked up a loaded die ", pch=19)
 # Question 2A
 probs <- seq(0, 1, 0.001)
 maxY <- max(dbeta(probs, 1, 1), dbeta(probs, 6, 6))
