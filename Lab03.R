@@ -7,7 +7,7 @@ probPrior <- c(0.01,0.99)
 probLoaded <- c(rep(1/10,5),5/10)
 container <- vector()
 for (i in 1:length(data)){
-  denom <- probPrior[1] * probLoaded[data[i]] + probLoaded[2] * 1/6
+  denom <- probPrior[1] * probLoaded[data[i]] + probPrior[2] * 1/6
   probPrior[1] <- probLoaded[data[i]] * probPrior[1]/denom
   container <- c(container,probPrior[1])
   probPrior[2] <- 1 - probPrior[1]
