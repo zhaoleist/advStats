@@ -54,3 +54,4 @@ plot(probs,dbetaUpdateTwoNew_22, col="blue", pch=20, xlab= labX, ylab =labY,
             max(dbetaUpdateTwoNew_21,dbetaUpdateTwoNew_22)))
 legend("topleft", legend=c("dbeta(probs,1+400,1+400)","dbeta(probs,6+400, 6+400)"), 
        col=c("red", "blue"), lty=2, lwd = 3, cex=0.5)
+##########################################################################################
