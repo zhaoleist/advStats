@@ -25,7 +25,7 @@ actualMean <- mean(myVals)
 actualVars <- var(myVals)
 # ANSWER
 " The expected mean is 5000 and the expected variance is 2500.
-  The actuial mean is 5000.688 and the actual variance is 2700.287."
+  The actual mean is 5000.688 and the actual variance is 2700.287."
 
 # 3C
 pValues <- vector(length=length(myVals), mode="double")
