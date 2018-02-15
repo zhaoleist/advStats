@@ -6,8 +6,7 @@ myT <- read.table("nc101_scaff_dataCounts.txt", header=TRUE, row.names = 1)
 par(mfrow=c(2,2))
 # (2)
 myT_log10 <- log10(myT+1)
-plot(log10(1:nrow(myT_log10)), myT_log10[,1], col="black", main="Counts for the two samples")
-points(log10(1:nrow(myT_log10)), myT_log10[,2], col="red")
+plot(myT_log10[,1], myT_log10[,2], col=c("black","red"), main="Counts for the two samples")
 legend("topleft", legend=c(names(myT)[1], names(myT)[2]), 
        col=c("black", "red"), cex=1, pch=21)
 # ANSWER:
