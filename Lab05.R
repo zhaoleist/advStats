@@ -50,4 +50,4 @@ for (i in 1:nrow(myT)){
 }
 hist(pValues_3, breaks=20, main="p-values for possion.test")
 # Answer for #(6):
-# The patterns are similar, but p-values for possion.test have more cases of being "significant".
+# The patterns are similar. They agree.
