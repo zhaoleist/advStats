@@ -10,8 +10,8 @@ plot(myT_log10[,1], myT_log10[,2], col=c("black","red"), main="Counts for the tw
 legend("topleft", legend=c(names(myT)[1], names(myT)[2]), 
        col=c("black", "red"), cex=1, pch=21)
 # ANSWER:
-# Qualitativly, majority of the genes seem to have similar pattern. But we can see more "zero" expression 
-# in D2_02 and some more "high" expression in D2_01. 
+# The majority of the genes seem to have similar pattern. But we can see some genes expressed in one sample but 
+# have no or low expression in the other sample.
 
 
 # (3) (4)
