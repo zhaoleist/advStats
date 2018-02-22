@@ -3,16 +3,16 @@ rm(list=ls())
 
 # (1)
 myT <- read.table("nc101_scaff_dataCounts.txt", header=TRUE, row.names = 1)
-par(mfrow=c(2,2))
-# (2)
-myT_log10 <- log10(myT+1)
-plot(myT_log10[,1], myT_log10[,2], col=c("black","red"), main="Counts for the two samples")
-legend("topleft", legend=c(names(myT)[1], names(myT)[2]), 
-       col=c("black", "red"), cex=1, pch=21)
-# ANSWER:
-# The majority of the genes seem to have similar pattern. But we can see some genes expressed in one sample but 
-# have no or low expression in the other sample.
 
+# (2)
+par(mfrow=c(3,2))
+myT_log10 <- log10(myT+1)
+plot(myT_log10[,1], myT_log10[,2], main="log scale counts for the two samples")
+lines(c(0,4), c(0,4), col="red")
+# ANSWER:
+# The biological replicates do not seem to have similar patterns of gene expression. 
+# While the red line indicates the case that the two replicates have same patterns, most actual points are to the right of the line, which means most genes 
+# have more expression in replicate 1.
 
 # (3) (4)
 sumCol <- apply(myT, 2, sum)
@@ -33,9 +33,11 @@ for (i in 1:nrow(myT_rmvLowAbund)){
 }
 hist(pValues_2, breaks=20, main="p-values for fisher.test without low abundance counts")
 # Answer for #(4):
-# They are not uniformly distributed. I don't expect them to be. If we say p <- 0.05 as "significant", 
-# the ration of significant p-values is: 43.9%, so we say they are less significant. After remove low 
-# abundance expression, the histogram lost the right-most bar, which was cause by zero in the dataset.
+# They are not uniformly distributed and I don't expect them to be. If we say p <- 0.05 is "significant", 
+# the ratio of significant p-values is: 29.1% ( hist(pValues, breaks=20, main="p-values for fisher.test")$counts[1]/length(pValues) ), 
+# so we say they are less significant. After removing low abundance expression, 1) the histogram lost the right-most bar, which was caused 
+# by the raw zero count in the dataset; 2) the ratio of significant p-values went up to 
+# 43.9% (hist(pValues_2, breaks=20, main="p-values for fisher.test")$counts[1]/length(pValues_2)). 
 
 # (5) (6)
 myT <- myT + 1
@@ -49,5 +51,7 @@ for (i in 1:nrow(myT)){
   pValues_3[i] <- poisson.test(myT[i,2], sumCol_plusOne[2], freq_background)$p.value
 }
 hist(pValues_3, breaks=20, main="p-values for possion.test")
+plot(pValues, pValues_3, main="p-values from fish.test vs. p-values from possion.test")
+lines(c(0,1), c(0,1), col="red")
 # Answer for #(6):
-# The patterns are similar. They agree.
+# The histograms look similar, but from the last graph, they don't agree.
