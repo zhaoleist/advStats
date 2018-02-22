@@ -50,8 +50,8 @@ for (i in 1:nrow(myT)){
   freq_background <- myT[i,1]/sumCol_plusOne[1]
   pValues_3[i] <- poisson.test(myT[i,2], sumCol_plusOne[2], freq_background)$p.value
 }
-hist(pValues_3, breaks=20, main="p-values for possion.test")
-plot(pValues, pValues_3, main="p-values from fisher.test vs. p-values from possion.test")
+hist(pValues_3, breaks=20, main="p-values for poisson")
+plot(pValues, pValues_3, main="p-values from fisher.test vs. p-values from poisson.test")
 lines(c(0,1), c(0,1), col="red")
 # Answer for #(6):
 # The histograms look similar, but from the last graph, they don't agree.
