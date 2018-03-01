@@ -1,0 +1,17 @@
+# 5)
+vectors: all elemtnst have the same mode
+matrices: 
+  a) Two dimensions with columns and rows. 
+  b) All elements have to be same mode and usually are all numeric. 
+  c) All rows have to be euqal length and so are they for all columns. 
+data frames: 
+  a) Similar structure to matrices with columns & rows. All rows have to be euqal length and so are they for all columns
+  b) Only elemtents within each column have to be same mode.
+  c) Usually have categorical data
+ Lists:
+ Arrays:
+ 
+ # 8)
+  When we have a large number of trials, the results of the trials should be close to expected value. 
+  With the number gets bigger, the results would be closer to the expected value.
+  
