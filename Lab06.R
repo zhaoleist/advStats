@@ -17,7 +17,8 @@ vars <- apply(myTNorm, 1, var)
 means <- apply(myTNorm, 1, mean)
 plot(log10(vars), log10(means), main="log scale variance vs. means")
 lines(c(0,6), c(0,6), col="red")
-# ANSWER: mean does not equal variance and means are smaller than variance.
+# ANSWER:
+# Means do not equal variance and means are smaller than variance.
 
 # (6)
 col_2_weeks <- 1:3
@@ -37,7 +38,7 @@ for (i in 1: nrow(myTNorm)){
                           alternative="two.sided")$p.value
 
 }
-plot(log10(averageNum_2_weeks+1), log10(averageNum_20_weeks+1), 
+plot(log10(averageNum_2_weeks), log10(averageNum_20_weeks), 
      col=ifelse(p.adjust(pValuesPoisson,method="BH") < 0.1, "red","black" ), 
      xlab="log10(average # of reads at two weeks)", ylab="log10(avarage # of reads at twenty weeks)",
      main="from poisson")
@@ -71,14 +72,15 @@ for (i in 1: length(perGeneEstimates)){
   else if (pValue > 0.5)
     pValuesNegativeBinomial[i] <- (1- pValue) * 2 
 }
-plot(log10(averageNum_2_weeks+1), log10(averageNum_20_weeks+1), 
+plot(log10(averageNum_2_weeks), log10(averageNum_20_weeks), 
      col=ifelse(p.adjust(pValuesNegativeBinomial,method="BH") < 0.1, "red","black"),
      xlab="log10(average # of reads at two weeks)", ylab="log10(avarage # of reads at twenty weeks)",
      main="from negative binomial")
 lines(c(0,10),c(0,10), col="blue")
-#ANSWER: 
+# ANSWER: 
 # Negative binomial test is more conservative and more appropriate. The variance are greater than means in rna-seq data, 
-# which violated the assumption of poission distribution that mean equals variance.
+# which violated the assumption of poisson distribution that mean equals variance. If we use poisson test, variance are
+# under-represented and we would end up with more significant p-values.
 
 # (8)
 plot(-log10(res$pval), -log10(pValuesNegativeBinomial))
