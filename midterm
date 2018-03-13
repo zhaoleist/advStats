@@ -1,5 +1,5 @@
 # 5)
-vectors: all elemtnst have the same mode
+vectors: A one-dimensional indexed list of data. All elemtnst have the same mode/type. 
 matrices: 
   a) Two dimensions with columns and rows. 
   b) All elements have to be same mode and usually are all numeric. 
@@ -8,7 +8,7 @@ data frames:
   a) Similar structure to matrices with columns & rows. All rows have to be euqal length and so are they for all columns
   b) Only elemtents within each column have to be same mode.
   c) Usually have categorical data
- Lists:
+ Lists: A list is a vector of vectors. The list can tolerate different types. 
  Arrays:
  
  # 8)
