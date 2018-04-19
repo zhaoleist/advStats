@@ -9,10 +9,11 @@ myPCOA <- princomp(myTData)
 
 # (2)
 varExplained <- myPCOA$sdev^2/sum(myPCOA$sdev^2)
-pdf("Lab11_Plots_Lei.pdf")
+
 def_palette <- palette()
 palette(c(def_palette, "brown", "darkgreen", "orange"))    # extend default palette to 11 colors
 
+pdf("Lab11_Plots_Lei.pdf")
 plot(myPCOA$scores[,1], myPCOA$scores[,2], col=factor(myT$genotype), pch=19, main="Colored by genotype", 
      xlab=paste0("PC 1 (", format(varExplained[1] * 100, digits=4), "%)"), 
      ylab=paste0("PC 2 (", format(varExplained[2] * 100, digits=4), "%)"))
